@@ -10,14 +10,14 @@ namespace OneTimePasswordTest
         {
             //Arrange
             string userId = "testUser";
-            OTPController OTPController = new();
+            OTPController otpController = new();
 
             //Act
-            string OTP = OTPController.GetPassword(userId);
+            string otp = otpController.GetPassword(userId);
 
             //Assert
-            Assert.IsNotNull(OTP);
-            Assert.AreEqual(8, OTP.Length);
+            Assert.IsNotNull(otp);
+            Assert.AreEqual(8, otp.Length);
         }
     }
 }

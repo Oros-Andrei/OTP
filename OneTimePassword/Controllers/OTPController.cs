@@ -48,15 +48,15 @@ namespace OneTimePassword.Controllers
         {
             //using the sha256 hash function for encrypting the password
             SHA256 sha256 = SHA256.Create();
-            //create a byte array with encoded password charactes
+
             byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
-            //create a byte array with characters afer using the hash function
+
             byte[] encriptedBytes = sha256.ComputeHash(passwordBytes);
-            //create a string with the values of encrypted paswword
+            //create a string with the values of encrypted password
             StringBuilder sb = new();
-            foreach (byte b in encriptedBytes)
+            foreach (byte eb in encriptedBytes)
             {
-                sb.Append(b);
+                sb.Append(eb);
             }
 
             return sb.ToString();

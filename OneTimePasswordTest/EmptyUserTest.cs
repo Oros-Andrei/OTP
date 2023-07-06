@@ -9,13 +9,13 @@ namespace OneTimePasswordTest
         public void OTPTestNullInput()
         {
             //Arrange
-            OTPController OTPController = new();
+            OTPController otpController = new();
 
             //Act
-            string OTP = OTPController.GetPassword(userId: null);
+            string otp = otpController.GetPassword(null);
 
             //Assert
-            Assert.AreEqual(OTP, string.Empty);
+            Assert.AreEqual(otp, string.Empty);
         }
     }
 }
