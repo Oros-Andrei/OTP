@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "OTP";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate OTP</title>
+</head>
+<body>
+    
+    <div>
+        <form action="@Url.Action("GetPassword")" method="get">
+            <h2>Generate OTP</h2>
+            <label for="userId">User Id : </label>
+            <br />
+            <input type="text" name="userId" id="userId"  required/>
+            <br />
+            <br />
+            <input type="submit" value="Generate"/>
+        </form>
+
+    </div>
+</body>
+</html>
