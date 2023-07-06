@@ -26,7 +26,7 @@ namespace OneTimePassword.Controllers
             //this method encrypt the password using hashing and return the result
             string hash = EncryptPassword(password);
 
-            //retun the firrst 8 characters of password
+            //retun the first 8 characters of password
             return hash.ToString().Substring(0, 8);
         }
 
