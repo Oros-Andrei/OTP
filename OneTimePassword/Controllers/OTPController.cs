@@ -32,6 +32,7 @@ namespace OneTimePassword.Controllers
 
         public ActionResult GetPasswordView(string userId)
         {
+            //get the password from request
             string password = GetPassword(userId);
             //set the expiration time
             string expireTime = DateTimeOffset.Now.AddSeconds(30).ToString("HH:mm:ss");
