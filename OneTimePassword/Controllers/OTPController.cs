@@ -12,19 +12,32 @@ namespace OneTimePassword.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetPassword(string userId)
+        public string GetPassword(string userId)
         {
+            //verify if userId is not null
+            if (userId == null)
+            {
+                return string.Empty;
+            }
+
             //concatenate the userId with dateTime
             string password = userId + DateTimeOffset.Now.ToString();
 
             //this method encrypt the password using hashing and return the result
             string hash = EncryptPassword(password);
 
+            //retun the firrst 8 characters of password
+            return hash.ToString().Substring(0, 8);
+        }
+
+        public ActionResult GetPasswordView(string userId)
+        {
+            string password = GetPassword(userId);
             //set the expiration time
             string expireTime = DateTimeOffset.Now.AddSeconds(30).ToString("HH:mm:ss");
 
             ViewBag.UserId = userId;
-            ViewBag.Password = hash.ToString().Substring(0, 8);//display the first 8 characters of password
+            ViewBag.Password = password.ToString().Substring(0, 8);//display the first 8 characters of password
             ViewBag.ExpirationTime = expireTime; //display the time when OTP will expire
 
             return View();

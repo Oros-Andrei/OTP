@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\OneTimePassword",
+    "\\OneTimePassword\\Views",
+    "\\OneTimePassword\\Views\\OTP"
   ],
+  "SelectedNode": "\\OneTimePassword\\Views\\OTP\\Generate.cshtml",
   "PreviewInSolutionExplorer": false
 }
